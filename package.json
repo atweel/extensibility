@@ -1,6 +1,6 @@
 {
   "name": "@stackeat/extensibility",
-  "version": "0.1.6",
+  "version": "0.1.5",
   "description": "> TODO: description",
   "author": "Eduard Malakhov <eduard@stackeat.com>",
   "homepage": "https://github.com/stackeat/extensibility#readme",
@@ -24,7 +24,8 @@
     "watch": "ttsc --build --watch",
     "clean": "rm -rf lib",
     "rebuild": "yarn clean && yarn build",
-    "prepublishOnly": "yarn rebuild"
+    "prepublishOnly": "yarn rebuild",
+    "postpublish": "git push --follow-tags"
   },
   "bugs": {
     "url": "https://github.com/stackeat/extensibility/issues"
