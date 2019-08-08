@@ -25,7 +25,7 @@
     "clean": "rm -rf lib",
     "rebuild": "yarn clean && yarn build",
     "prepublishOnly": "yarn rebuild",
-    "postpublish": "git push --follow-tags"
+    "postversion": "git push --follow-tags"
   },
   "bugs": {
     "url": "https://github.com/stackeat/extensibility/issues"
