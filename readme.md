@@ -34,7 +34,8 @@ class SampleExtensionModule implements ExtensionModule {
         isBound: interfaces.IsBound,
         rebind: interfaces.Rebind): void {
         //  Bind implementations as you would normally do in InversifyJS container modules.
-        // See https://github.com/inversify/InversifyJS/blob/master/wiki/container_modules.md for more information on InversifyJS container modules.
+        //  See https://github.com/inversify/InversifyJS/blob/master/wiki/container_modules.md
+        //  for more information on InversifyJS container modules.
     }
 }
 
