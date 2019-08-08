@@ -1,7 +1,7 @@
 # Extensibility package by Stackeat Company
 
 ## Overview
-This package introduces the concept of **extensible modules** that can be used to break large monolithic packages into a single **core module** and a collection of **extensions modules** thus providing more granular dependency management and reducing overall code footprint for their consumers. As of version 0.1.2, integration between extension modules and core module that is supported out of the box is limited to injecting capabilities provided by extensions into a single **InversifyJS container** via **InversifyJS container modules**. This functionality may be extended in future releases. If you are not familiar with InversifyJS, please refer to the project's repository on GitHub https://github.com/inversify/InversifyJS.
+This package introduces the concept of **extensible modules** that can be used to break large monolithic packages into a single **core module** and a collection of **extensions modules** thus providing more granular dependency management and reducing overall code footprint for their consumers. As of version 0.1.2, integration between extension modules and core module that is supported out of the box is limited to injecting capabilities provided by extensions into a single **InversifyJS container** via **InversifyJS container modules**. This functionality may be extended in future releases. If you are not familiar with InversifyJS, please refer to the project's repository on GitHub: https://github.com/inversify/InversifyJS.
 
 ## Key concepts
 ### Core module
