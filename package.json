@@ -24,8 +24,7 @@
     "watch": "ttsc --build --watch",
     "clean": "rm -rf lib",
     "rebuild": "yarn clean && yarn build",
-    "prepublishOnly": "yarn rebuild",
-    "postpublish": "git push --follow-tags"
+    "prepublishOnly": "yarn rebuild"
   },
   "bugs": {
     "url": "https://github.com/stackeat/extensibility/issues"
