@@ -6,8 +6,21 @@ type SettingsLike<T> = {
 };
 
 class CoreModule<TSettings extends SettingsLike<TSettings> = {}> {
+    constructor(defaultSettings: TSettings) {
+        this.settings = defaultSettings;
+    }
+
+    public configure(settings: Partial<TSettings>): CoreModule<TSettings> {
+        this.settings = {
+            ...this.settings,
+            ...settings,
+        }
+
+        return this;
+    }
 
     private readonly extensions: ExtensionModule[] = [];
+    private settings: TSettings;
     public use(extension: ExtensionModule): CoreModule<TSettings> {
         this.extensions.push(extension);
 
@@ -21,6 +34,10 @@ class CoreModule<TSettings extends SettingsLike<TSettings> = {}> {
 
     protected adjustExtensions(extensions: ExtensionModule[]): ExtensionModule[] {
         return extensions;
+    }
+
+    protected getSettings(): TSettings {
+        return this.settings;
     }
 }
 
