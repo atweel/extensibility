@@ -1,17 +1,26 @@
 import { ExtensionModule } from 'conventions/ExtensionModule';
 import { interfaces } from 'inversify';
 
-class CoreModule {
+type SettingsLike<T> = {
+    [key in keyof T]: string | number | boolean;
+};
+
+class CoreModule<TSettings extends SettingsLike<TSettings> = {}> {
 
     private readonly extensions: ExtensionModule[] = [];
-    public use(extension: ExtensionModule): CoreModule {
+    public use(extension: ExtensionModule): CoreModule<TSettings> {
         this.extensions.push(extension);
 
         return this;
     }
 
     public injectContainerModules(container: interfaces.Container): void {
-        this.extensions.map((extension) => extension.injectContainerModules(container));
+        this.adjustExtensions(this.extensions)
+            .map((extension) => extension.injectContainerModules(container));
+    }
+
+    protected adjustExtensions(extensions: ExtensionModule[]): ExtensionModule[] {
+        return extensions;
     }
 }
 
