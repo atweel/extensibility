@@ -22,7 +22,6 @@
   "scripts": {
     "clean": "rm -rf lib",
     "rebuild": "yarn clean && yarn build",
-    "prepublishOnly": "yarn rebuild",
     "postversion": "git push --follow-tags"
   },
   "bugs": {
@@ -37,5 +36,5 @@
     "@stackeat/primitives": "^0.1.3",
     "inversify": "^5.0.1"
   },
-  "gitHead": "7dc896e33db336964b7ed8a3d1fb99c42a8faf60"
+  "gitHead": "25ed083f53a67babc410e7c90891d6cbeab1944f"
 }
