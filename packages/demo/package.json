@@ -1,0 +1,33 @@
+{
+  "name": "@stackeat/extensibility-demo",
+  "version": "0.1.13",
+  "description": "> TODO: description",
+  "author": "Eduard Malakhov <eduard@stackeat.com>",
+  "homepage": "https://github.com/stackeat/extensibility#readme",
+  "license": "ISC",
+  "main": "app/entrypoint.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stackeat/extensibility.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "clean": "rm -rf app"
+  },
+  "bugs": {
+    "url": "https://github.com/stackeat/extensibility/issues"
+  },
+  "devDependencies": {
+    "@zerollup/ts-transform-paths": "^1.7.3"
+  },
+  "dependencies": {
+    "@stackeat/extensibility": "^0.1.13"
+  }
+}
