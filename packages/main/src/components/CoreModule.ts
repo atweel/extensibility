@@ -3,8 +3,8 @@ import { BundlingSyntaxImplement } from 'components/BundlingSyntaximplement';
 import { BundlingSyntax, ConfigurationRoutine, ConfigurationSyntax } from 'conventions/BundlingSyntax';
 import { ExtensionModule } from 'conventions/ExtensionModule';
 
-abstract class CoreModule<TEA extends PurelyFunctional<TEA>,
-    TCA extends PurelyFunctional<TCA>> implements BundlingSyntax<TEA, TCA> {
+abstract class CoreModule<TEA extends PurelyFunctional<TEA> = {},
+    TCA extends PurelyFunctional<TCA> = {}> implements BundlingSyntax<TEA, TCA> {
 
     private extensions: Array<ExtensionModule<TEA, any>> = [];
 
