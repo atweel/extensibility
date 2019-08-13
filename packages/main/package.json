@@ -1,0 +1,40 @@
+{
+  "name": "@stackeat/extensibility",
+  "version": "0.1.12",
+  "description": "> TODO: description",
+  "author": "Eduard Malakhov <eduard@stackeat.com>",
+  "homepage": "https://github.com/stackeat/extensibility#readme",
+  "license": "ISC",
+  "main": "lib/exports.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stackeat/extensibility.git"
+  },
+  "scripts": {
+    "clean": "rm -rf lib",
+    "rebuild": "yarn clean && yarn build",
+    "prepublishOnly": "yarn rebuild",
+    "postversion": "git push --follow-tags"
+  },
+  "bugs": {
+    "url": "https://github.com/stackeat/extensibility/issues"
+  },
+  "devDependencies": {
+    "@zerollup/ts-transform-paths": "^1.7.3",
+    "ttypescript": "^1.5.7",
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "inversify": "^5.0.1",
+    "@stackeat/primitives": "^0.1.3"
+  }
+}

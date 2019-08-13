@@ -1,0 +1,9 @@
+{
+    "references": [
+        { "path": "packages/main" },
+        { "path": "packages/demo" }
+    ],
+    "exclude": [
+        "*"
+    ]
+}
