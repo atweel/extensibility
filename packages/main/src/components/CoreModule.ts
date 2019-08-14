@@ -1,7 +1,9 @@
-import { PurelyFunctional } from '@stackeat/primitives';
+import { NotImplementedError, PurelyFunctional } from '@stackeat/primitives';
 import { BundlingSyntaxImplement } from 'components/BundlingSyntaximplement';
-import { BundlingSyntax, ConfigurationRoutine, ConfigurationSyntax } from 'conventions/BundlingSyntax';
+import { BundlingSyntax, ConfigurationRoutine, ConfigurationSyntax, InjectionSyntax } from 'conventions/BundlingSyntax';
 import { ExtensionModule } from 'conventions/ExtensionModule';
+import { interfaces } from 'inversify';
+import { InjectionSyntaxImplement } from './InjectionSyntaxImplement';
 
 abstract class CoreModule<TEA extends PurelyFunctional<TEA> = {},
     TCA extends PurelyFunctional<TCA> = {}> implements BundlingSyntax<TEA, TCA> {
@@ -10,18 +12,24 @@ abstract class CoreModule<TEA extends PurelyFunctional<TEA> = {},
 
     private bundleCallback = this.bundleInternal.bind(this);
     private configureCallback = this.configure.bind(this);
+    private injectionCallback = this.inject.bind(this);
     public bundle<TECA>(extension: ExtensionModule<TEA, TECA>): BundlingSyntax<TEA, TCA & TECA> {
         this.bundleInternal(extension);
 
-        return new BundlingSyntaxImplement<TEA, TCA & TECA>(this.bundleCallback, this.configureCallback);
+        return new BundlingSyntaxImplement<TEA, TCA & TECA>(this.bundleCallback,
+            this.configureCallback, this.injectionCallback);
     }
-    public configure(configurator: ConfigurationRoutine<TCA>): void;
-    public configure(configurator: ConfigurationRoutine<any>): void {
+    public configure(configurator: ConfigurationRoutine<TCA>): InjectionSyntax;
+    public configure(configurator: ConfigurationRoutine<any>): InjectionSyntax {
         configurator(this.compileConfigurationSyntax());
+
+        return new InjectionSyntaxImplement(this.injectionCallback);
     }
 
     protected abstract compileExtensionApi(): TEA;
     protected abstract compileConfigurationApi(): TCA;
+
+    protected abstract inject(container: interfaces.Container): void;
 
     private bundleInternal(extension: ExtensionModule<TEA, any>): void {
         this.extensions.push(extension);
