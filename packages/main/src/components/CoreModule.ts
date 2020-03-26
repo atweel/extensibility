@@ -1,4 +1,4 @@
-import { NotImplementedError, PurelyFunctional } from '@stackeat/primitives';
+import { PurelyFunctional } from '@stackeat/primitives';
 import { BundlingSyntaxImplement } from 'components/BundlingSyntaximplement';
 import { BundlingSyntax, ConfigurationRoutine, ConfigurationSyntax, InjectionSyntax } from 'conventions/BundlingSyntax';
 import { ExtensionModule } from 'conventions/ExtensionModule';
@@ -17,7 +17,7 @@ abstract class CoreModule<TEA extends PurelyFunctional<TEA> = {},
         this.bundleInternal(extension);
 
         return new BundlingSyntaxImplement<TEA, TCA & TECA>(this.bundleCallback,
-            this.configureCallback, this.injectionCallback);
+                                                            this.configureCallback, this.injectionCallback);
     }
     public configure(configurator: ConfigurationRoutine<TCA>): InjectionSyntax;
     public configure(configurator: ConfigurationRoutine<any>): InjectionSyntax {
@@ -46,7 +46,7 @@ abstract class CoreModule<TEA extends PurelyFunctional<TEA> = {},
         Object.keys(result).map((value) => {
             const callback = result[value];
 
-            result[value] = (...args: any[]) => {
+            result[value] = (...args: any[]): any => {
                 callback(args);
 
                 return result;

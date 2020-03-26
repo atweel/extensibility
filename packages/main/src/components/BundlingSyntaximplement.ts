@@ -18,7 +18,7 @@ class BundlingSyntaxImplement<TA extends PurelyFunctional<TA>,
         this.bundleCallback(extension);
 
         return new BundlingSyntaxImplement<TA, T & TECA>(this.bundleCallback,
-            this.configureCallback, this.injectionCallback);
+                                                         this.configureCallback, this.injectionCallback);
     }
 
     public configure(configurator: ConfigurationRoutine<T>): InjectionSyntax {

@@ -8,7 +8,7 @@ interface DemoExtensionModuleAConfigurationApi {
 class DemoExtensionModuleA implements ExtensionModule<DemoCoreModuleApi, DemoExtensionModuleAConfigurationApi> {
     public compileConfigurationApi(extensionApi: DemoCoreModuleApi): DemoExtensionModuleAConfigurationApi {
         return {
-            configureExtensionA: () => {
+            configureExtensionA: (): void => {
                 // tslint:disable-next-line: no-console
                 console.log('Configuring extension A');
                 extensionApi.doStuff('A');

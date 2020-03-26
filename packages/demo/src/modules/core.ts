@@ -1,4 +1,5 @@
 import { CoreModule } from '@stackeat/extensibility';
+import { NotImplementedError } from '@stackeat/primitives';
 
 interface DemoCoreModuleApi {
     doStuff(label: string): void;
@@ -21,6 +22,10 @@ class DemoCoreModule extends CoreModule<DemoCoreModuleApi, DemoCoreModuleConfigu
         };
     }
 
+    protected inject(/*container: interfaces.Container*/): void {
+        throw new NotImplementedError();
+    }
+
     private configureCore(): void {
         // tslint:disable-next-line: no-console
         console.log('configureCore');
@@ -28,7 +33,7 @@ class DemoCoreModule extends CoreModule<DemoCoreModuleApi, DemoCoreModuleConfigu
 
     private doStuff(label: string): void {
         // tslint:disable-next-line: no-console
-        console.log(`Doing stuff for ${label}...`);
+        console.log(`Doing stuff for ${ label }...`);
     }
 }
 
