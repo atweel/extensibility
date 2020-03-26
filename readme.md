@@ -1,3 +1,5 @@
+![Integrate master branch](https://github.com/atweel/extensibility/workflows/Integrate%20master%20branch/badge.svg)
+
 # Extensibility package by Stackeat Company
 
 ## Overview
