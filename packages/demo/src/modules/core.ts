@@ -1,4 +1,4 @@
-import { CoreModule } from '@stackeat/extensibility';
+import { CoreModule } from '@atweel/extensibility';
 import { NotImplementedError } from '@stackeat/primitives';
 
 interface DemoCoreModuleApi {

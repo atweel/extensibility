@@ -1,4 +1,4 @@
-import { ExtensionModule } from '@stackeat/extensibility';
+import { ExtensionModule } from '@atweel/extensibility';
 import { DemoCoreModuleApi } from './core';
 
 interface DemoExtensionModuleAConfigurationApi {

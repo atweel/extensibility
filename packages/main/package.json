@@ -1,9 +1,9 @@
 {
-  "name": "@stackeat/extensibility",
+  "name": "@atweel/extensibility",
   "version": "0.1.19",
   "description": "> TODO: description",
-  "author": "Eduard Malakhov <eduard@stackeat.com>",
-  "homepage": "https://github.com/stackeat/extensibility#readme",
+  "author": "Eduard Malakhov <eduard@atweel.com>",
+  "homepage": "https://github.com/atweel/extensibility#readme",
   "license": "ISC",
   "main": "lib/exports.js",
   "directories": {
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stackeat/extensibility.git"
+    "url": "git+https://github.com/atweel/extensibility.git"
   },
   "scripts": {
     "clean": "rm -rf lib",
@@ -25,7 +25,7 @@
     "postversion": "git push --follow-tags"
   },
   "bugs": {
-    "url": "https://github.com/stackeat/extensibility/issues"
+    "url": "https://github.com/atweel/extensibility/issues"
   },
   "devDependencies": {
     "@zerollup/ts-transform-paths": "^1.7.3",
